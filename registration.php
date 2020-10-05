@@ -113,7 +113,7 @@
                     die();
                 } //here you need to add else condition
             }else{
-                $query = "INSERT into users (id,username,company,firstname,lastname,mobile, email,password,cpassword, trn_date,type) VALUES (NULL,'$username','$company','$firstname','$lastname','$mobile','$email', '".md5($password)."','".md5($cpassword)."', '$trn_date','$type')";
+                $query = "INSERT into users (id,username,company,firstname,lastname,mobile, email,password,cpassword, trn_date,type) VALUES (NULL,'$username','$company','$firstname','$lastname','$mobile','$email', '".base64_encode($password)."','".base64_encode($cpassword)."', '$trn_date','$type')";
                 $result = mysqli_query($con,$query);
                 if($result){
                     echo "<div class='form'>

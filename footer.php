@@ -85,3 +85,25 @@
   $('#dtMaterialDesignExample1_wrapper .dataTables_filter').find('label').remove();
 });
 </script>
+
+
+
+<script>
+  $(document).ready(function () {
+  $('#dtMaterialDesignExample5').DataTable();
+  $('#dtMaterialDesignExample5_wrapper').find('label').each(function () {
+    $(this).parent().append($(this).children());
+  });
+  $('#dtMaterialDesignExample5_wrapper .dataTables_filter').find('input').each(function () {
+    const $this = $(this);
+    $this.attr("placeholder", "Search");
+    $this.removeClass('form-control-sm');
+  });
+  $('#dtMaterialDesignExample5_wrapper .dataTables_length').addClass('d-flex flex-row');
+  $('#dtMaterialDesignExample5_wrapper .dataTables_filter').addClass('md-form');
+  $('#dtMaterialDesignExample5_wrapper select').removeClass('custom-select custom-select-sm form-control form-control-sm');
+  $('#dtMaterialDesignExample5_wrapper select').addClass('mdb-select');
+  $('#dtMaterialDesignExample5_wrapper .mdb-select').materialSelect();
+  $('#dtMaterialDesignExample5_wrapper .dataTables_filter').find('label').remove();
+});
+</script>

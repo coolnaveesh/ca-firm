@@ -8,7 +8,7 @@ if (isset($_POST['username'])){
 	$username = mysqli_real_escape_string($con,$username);
 	$password = stripslashes($_REQUEST['password']);
 	$password = mysqli_real_escape_string($con,$password);
-        $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
+    $query = "SELECT * FROM `users` WHERE username='$username' and password='".base64_encode($password)."'";
 	$result = mysqli_query($con,$query) or die(mysql_error());
 	if (mysqli_num_rows($result)==1) {
 		$logged_in_user = mysqli_fetch_assoc($result);

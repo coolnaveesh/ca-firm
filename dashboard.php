@@ -21,9 +21,13 @@ include("header.php");
                 <a class="nav-link active" id="home-tab-md" data-toggle="tab" href="#home-md" role="tab" aria-controls="home-md"
                 aria-selected="true">Upload Payment Information</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" id="profile-tab-md" data-toggle="tab" href="#profile-md" role="tab" aria-controls="profile-md"
                 aria-selected="false">Upload Returns</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab-md" data-toggle="tab" href="#profile-md" role="tab" aria-controls="profile-md"
+                aria-selected="false">Upload Payment Info Status</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="contact-tab-md" data-toggle="tab" href="#contact-md" role="tab" aria-controls="contact-md"
@@ -55,27 +59,40 @@ include("header.php");
         </form>
     </div>
     <div class="tab-pane fade" id="profile-md" role="tabpanel" aria-labelledby="profile-tab-md">
-        <form class="border border-light p-5">
-            <p class="h4 mb-4 text-center">Upload Returns</p>
-            <label>Name fo the Client:</label>
-            <input type="text" class="form-control mb-4" placeholder="Amount Paid">
-            <label>TAN Number:</label>
-            <input type="text"  class="form-control mb-4" placeholder="Reference Number">
-            <label>Type fo Return:</label>
-            <select class="browser-default custom-select">
-                <option selected>SELECT</option>
-                <option value="revised">Revised</option>
-                <option value="original">Original</option>
-            </select><br>
-            
-            <br><label>Quater | Year:</label>
-            <input type="text"  class="form-control mb-4" placeholder="Quater | Year">
-            <center>
-            <input type="submit" name="submit" class="btn btn-info btn-block my-4" value="SAVE">
-            <input type="submit" name="submit" class="btn btn-info btn-block my-4" value="MODIFY">
-            <input type="submit" name="submit" class="btn btn-info btn-block my-4" value="DELETE">
-            </center>
-        </form>
+        <table id="dtMaterialDesignExample5" class="table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="th-sm">ID
+                    </th>
+                    <th class="th-sm">STATUS
+                    </th>
+                    <th class="th-sm">REMARKS
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $payment_info = "SELECT * FROM `payment_info` WHERE username='".$_SESSION['username']."' order by trn_date ASC";
+                if ($payment_infos = mysqli_query($con,$payment_info)) { 
+                    while($rows = mysqli_fetch_assoc($payment_infos)){
+                        if($rows['status']==1){
+                            $status="Approved";
+                        }elseif($rows['status']==2){
+                            $status="Rejected";
+                        }else{
+                            $status="Processing";
+                        }
+                        echo'
+                    <tr>
+                        <td>'.$rows['id'].'</td>
+                        <td>'.$status.'</td>
+                        <td>'.$rows['remarks'].' </td>
+                    </tr>';
+                }
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
     <div class="tab-pane fade" id="contact-md" role="tabpanel" aria-labelledby="contact-tab-md">
         <table id="dtMaterialDesignExample" class="table" cellspacing="0" width="100%">
