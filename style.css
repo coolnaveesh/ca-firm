@@ -17,25 +17,27 @@ h1.login-title {
   font-size: 25px;
   font-weight: 300;
   color: #ADADAD;
-  text-align:center;
+  text-align: center;
   background: #f7f7f7;
- 
+
 }
 
 .login-input {
   width: 285px;
   height: 50px;
   margin-bottom: 25px;
-  padding-left:10px;
+  padding-left: 10px;
   font-size: 15px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .login-input:focus {
-    border-color:#6e8095;
-    outline: none;
-  }
+  border-color: #6e8095;
+  outline: none;
+}
+
 .login-button {
   width: 100%;
   height: 50px;
@@ -46,42 +48,41 @@ h1.login-title {
   background: #f0776c;
   border: 0;
   border-radius: 5px;
-  cursor: pointer; 
-  outline:0;
+  cursor: pointer;
+  outline: 0;
 }
 
-.login-lost
-{
-  text-align:center;
-  margin-bottom:0px;
+.login-lost {
+  text-align: center;
+  margin-bottom: 0px;
 }
 
-.login-lost a
-{
-  color:#666;
-  text-decoration:none;
-  font-size:13px;
+.login-lost a {
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
 }
-.form{
-	text-align: center;
-	color: white;
+
+.form {
+  text-align: center;
+  color: white;
 }
+
 .form a {
-	text-decoration: none;
-	color: red;
+  text-decoration: none;
+  color: red;
 }
+
 .form a:hover {
-	font-size: 20px;
-	color: aqua;
+  font-size: 20px;
+  color: aqua;
 }
-#myTabContentMD{
-  padding: 3em;
-  margin: 3em;
-}
-.nav-link.waves-effect.waves-light:hover{
+
+.nav-link.waves-effect.waves-light:hover {
   border: none;
 }
-.nav-link.waves-effect.waves-light.active{
+
+.nav-link.waves-effect.waves-light.active {
   border-left: 2px solid white;
   background: none;
   border-right: 2px solid white;
@@ -91,17 +92,20 @@ h1.login-title {
   color: #f9f9f9;
   font-weight: 900;
 }
-#myTabMD{
+
+#myTabMD {
   border: none;
 }
-.card{
+
+.card {
   background: none;
 }
-.tab-pane.fade.show.active{
-  background:white;
-  margin:0em 5em;
+
+.tab-pane.fade.show.active {
+  background: white;
 }
-.tab-pane.fade.show.active.show{
+
+.tab-pane.fade.show.active.show {
   padding: 1em;
 }
 
@@ -118,6 +122,6 @@ table.dataTable thead .sorting_desc_disabled:before {
   bottom: .5em;
 }
 
-#dtMaterialDesignExample_filter > label{
+#dtMaterialDesignExample_filter>label {
   display: none;
 }

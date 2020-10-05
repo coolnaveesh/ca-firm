@@ -3,6 +3,11 @@ require('db.php');
 include("auth.php");
 include("header.php");
 ?>
+<style>
+#dtMaterialDesignExample1_filter > label{
+    display:none;
+}
+</style>
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
     <!-- Navbar brand -->
@@ -42,7 +47,7 @@ include("header.php");
     </div>
     <!-- Collapsible content -->
 </nav>
-<div class="tab-content card pt-5" id="myTabContentMD">
+<div class="tab-content card" id="myTabContentMD">
     <div class="tab-pane fade show active" id="home-md" role="tabpanel" aria-labelledby="home-tab-md">
         <form class="border border-light p-5" action="payment_info_process.php" method="POST" enctype="multipart/form-data">
             <p class="h4 mb-4 text-center">Upload Payment Information</p>
@@ -163,9 +168,9 @@ include("header.php");
                       <td>'.$rows['charges'].'</td>
                       <td>'.$rows['tan_number'].'</td>
                       <td>'.$rows['type_of_return'].'</td>
-                      <td>'.$rows['quater'].'   '.$rows['year'].' </td>
+                      <td>'.$rows['quater'].' ';?> |&nbsp;<?php echo'   '.$rows['year'].' </td>
                       <td>'.$rows['ack_no'].'</td>
-                      <td><a href="uploads/'.$rows['gov_return_file'].'" download>Download</a></td>
+                      <td><a href="uploads/'.$rows['gov_return_file'].'" download><span style="color:blue;font-weight:600;">Download</span></a></td>
                       
                     </tr>';
                         }

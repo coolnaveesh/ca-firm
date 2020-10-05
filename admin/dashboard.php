@@ -59,7 +59,7 @@ include("../auth.php");
 		<!--/.Navbar-->
 		<!-- navbar ends -->
 		
-		<div class="tab-content card pt-5" id="myTabContentMD">
+		<div class="tab-content card" id="myTabContentMD">
 			<div class="tab-pane fade show active" id="home-md" role="tabpanel" aria-labelledby="home-tab-md">
 				
 				<!-- <form class="border border-light p-5">
