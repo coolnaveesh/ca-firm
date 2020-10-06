@@ -69,6 +69,8 @@ include("header.php");
                 <tr>
                     <th class="th-sm">ID
                     </th>
+                    <th class="th-sm">USERNAME
+                    </th>
                     <th class="th-sm">STATUS
                     </th>
                     <th class="th-sm">REMARKS
@@ -90,6 +92,7 @@ include("header.php");
                         echo'
                     <tr>
                         <td>'.$rows['id'].'</td>
+                        <td>'.$rows['username'].'</td>
                         <td>'.$status.'</td>
                         <td>'.$rows['remarks'].' </td>
                     </tr>';
